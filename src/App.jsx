@@ -1,34 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Box } from '@mui/material'
 import './App.css'
+import ReactIcon from './assets/react.svg'
+import AddTaskButton from './components/actionButton'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const boxStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Box component="section" sx={boxStyles}>
+      <header>
+        <h1>TO-DO</h1>
+        <img src={ReactIcon} alt="react_icon" width={50} />
+      </header>
+      <AddTaskButton />
+    </Box>
   )
 }
 
